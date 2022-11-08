@@ -1,0 +1,44 @@
+[
+    {
+        "price": 10698,
+        "image": "https://i.ibb.co/zxMRq17/khadija-yousaf-l-Kwp3-FQom-Y-unsplash.jpg",
+        "rating": 4.5,
+        "name": "An online Gallery",
+        "details": "Most photographers will give you access to your own password-protected online gallery, so you can share the photos with family and friends. Often this gallery allows you and your relatives to purchase individual prints at prices set by the photographer."
+    },
+    {
+        "price": 67566,
+        "image": "https://i.ibb.co/93TkDkV/allef-vinicius-Dm-Ubklt-Ys-KI-unsplash.jpg",
+        "rating": 4.5,
+        "name": "A certain number of prints",
+        "details": "Traditionally, photographers would include a selection of prints 6x4, or 7x5, or a large one for the wall, but not many photographers do that these days."
+    },
+    {
+        "price": 68610,
+        "image": "https://i.ibb.co/K2s00rh/sdf.jpg",
+        "rating": 4.5,
+        "name": "Photography coverage on the day",
+        "details": "The duration of photographer taking photographs on your wedding day. Often, the package details up to 6 hours, or up to 8 hours, or from ceremony until the speeches. The length of time of the photographer taking photographs obviously affects the price of the package."
+    },
+    {
+        "price": 66674,
+        "image": "https://i.ibb.co/KhMwR1d/nathan-dumlao-r-GHO4-XSF0-Qk-unsplash.jpg",
+        "rating": 4.5,
+        "name": " A certain number of digital photographs",
+        "details": "The package should say how many photographs you can expect to receive after your wedding."
+    },
+    {
+        "price": 50685,
+        "image": "https://i.ibb.co/x3Zytkt/dsd.jpg",
+        "rating": 4.5,
+        "name": "A pre-wedding photo session",
+        "details": "It may include a pre-wedding photo session. This is a session that takes place months before the wedding. Some people also call it an engagement photo shoot. It's like a play shoot where you can get to know your photographer, and they get to know you. More INFO ABOUT PRE-SHOOTS on this page."
+    },
+    {
+        "price": 55685,
+        "image": "https://i.ibb.co/m4t4tn6/jonathan-borba-0-MTXPH38-Xb-A-unsplash.jpg",
+        "rating": 4.5,
+        "name": "A wedding album",
+        "details": "It might include a wedding album. All styles vary widely in price. The photo books are the cheapest, and are not really wedding albums as such. The assembly style album are relatively cheap too, as the album suppliers can produce lots of them and have them in their warehouse. Coffee table books and overlay / matted albums are partly hand-crafted albums and are therefore substantially more expensive. However, the quality of some of them is absolutely outstanding and well worth the investment."
+    }
+]
