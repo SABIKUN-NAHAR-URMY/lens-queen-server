@@ -24,6 +24,13 @@ async function run() {
         const services = await cursor.toArray();
         res.send(services);
     })
+
+    app.post('/servicesAll', async(req, res)=>{
+        const service = req.body;
+        const result = await servicesCollection.insertOne(service);
+        res.send(result);
+    })
+
     app.get('/servicesLimit', async (req, res) => {
         const query = {};
         const cursor = servicesCollection.find(query).limit(3);
@@ -64,11 +71,11 @@ async function run() {
 
     app.patch('/reviews/:id', async(req, res)=>{
         const id = req.params.id;
-        const review = req.body.review;
+        const rating = req.body.rating;
         const query = {_id : ObjectId(id)};
         const updateDoc = {
             $set:{
-                review : review
+                rating : rating + 1
             }
         }
         const result = await reviewsCollection.updateOne(query, updateDoc);
