@@ -39,10 +39,15 @@ async function run() {
     })
 
 
-    app.get('/reviews/:id', async (req, res) => {
-        const id = req.params.id;
-        const query = { _id: ObjectId(id)};
-        const reviews = await reviewsCollection.findOne(query);
+    app.get('/reviews', async (req, res) => {
+        let query = {};
+        if(req.query.serviceName){
+            query = {
+                serviceName: req.query.serviceName
+            }
+        }
+        const cursor = reviewsCollection.find(query);
+        const reviews = await cursor.toArray();
         res.send(reviews);
     })
 
