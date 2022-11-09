@@ -18,6 +18,8 @@ async function run() {
     const servicesCollection = client.db('lensQueen').collection('services');
     const reviewsCollection = client.db('lensQueen').collection('reviews');
 
+    let sortPattern = {dateAndTime : -1};
+
     app.get('/servicesAll', async (req, res) => {
         const query = {};
         const cursor = servicesCollection.find(query);
@@ -58,7 +60,7 @@ async function run() {
                 email: req.query.email
             }
         }
-        const cursor = reviewsCollection.find(query);
+        const cursor = reviewsCollection.find(query).sort(sortPattern);
         const reviews = await cursor.toArray();
         res.send(reviews);
     })
