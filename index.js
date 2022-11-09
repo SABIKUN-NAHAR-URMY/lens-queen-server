@@ -16,6 +16,7 @@ console.log(uri);
 
 async function run() {
     const servicesCollection = client.db('lensQueen').collection('services');
+    const reviewsCollection = client.db('lensQueen').collection('reviews');
 
     app.get('/servicesAll', async (req, res) => {
         const query = {};
@@ -35,6 +36,12 @@ async function run() {
         const query = { _id: ObjectId(id)};
         const service = await servicesCollection.findOne(query);
         res.send(service);
+    })
+
+    app.post('/reviews', async(req, res)=>{
+        const review = req.body;
+        const result = await reviewsCollection.insertOne(review);
+        res.send(result);
     })
 
 }
