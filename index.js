@@ -86,7 +86,6 @@ async function run() {
         app.get('/reviews',verifyJWT, async (req, res) => {
 
             const decoded = req.decoded;
-            console.log('inside reviews api', jwt.decode);
             if (decoded.email !== req.query.email) {
                 return res.status(403).send({ message: 'Forbidden access' })
             }
