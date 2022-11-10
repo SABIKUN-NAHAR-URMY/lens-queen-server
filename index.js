@@ -69,12 +69,7 @@ async function run() {
         })
 
 
-        app.get('/reviews', verifyJWT, async (req, res) => {
-            const decoded = req.decoded;
-            console.log('inside reviews api', jwt.decode);
-            if (decoded.email !== req.query.email) {
-                res.status(403).send({ message: 'Forbidden access' })
-            }
+        app.get('/reviews/queryService', async (req, res) => {
 
             let query = {};
             if (req.query.serviceName) {
@@ -82,7 +77,23 @@ async function run() {
                     serviceName: req.query.serviceName
                 }
             }
-            else if (req.query.email) {
+            const cursor = reviewsCollection.find(query).sort(sortPattern);
+            const reviews = await cursor.toArray();
+            res.send(reviews);
+        })
+
+
+        app.get('/reviews',verifyJWT, async (req, res) => {
+
+            const decoded = req.decoded;
+            console.log('inside reviews api', jwt.decode);
+            if (decoded.email !== req.query.email) {
+                return res.status(403).send({ message: 'Forbidden access' })
+            }
+
+            let query = {};
+
+            if (req.query.email) {
                 query = {
                     email: req.query.email
                 }
@@ -130,8 +141,8 @@ async function run() {
         })
 
     }
-    finally{
-        
+    finally {
+
     }
 }
 run().catch(error => console.error(error));
